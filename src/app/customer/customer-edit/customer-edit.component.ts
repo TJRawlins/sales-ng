@@ -34,6 +34,10 @@ export class CustomerEditComponent {
       }
     });
   }
+
+  goBack(): void {
+    window.history.back();
+  }
     
   ngOnInit(): void {
     let id = +this.route.snapshot.params["id"]
