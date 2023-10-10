@@ -11,19 +11,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngIf="cust.id >= 1">
+            <tr>
                 <td>{{cust.id}}</td>
                 <td>{{cust.code}}</td>
                 <td>{{cust.name}}</td>
                 <td>{{cust.sales | currency}}</td>
                 <td>{{cust.active ? "Yes" : "No"}}</td>
-                <td><a [routerLink]="['/customers/', cust.id]">GET CUSTOMER</a></td>
+                <td><a [routerLink]="['/customers/', cust.id]">Edit</a> | <a [routerLink]="['/customers/', cust.id]">Delete</a></td>
             </tr>
         </tbody>
     </table>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Customer ID</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="+id">
-            <button class="btn btn-primary" (click)="getInput(id)" >Get User</button>
-      </div>
 </div>

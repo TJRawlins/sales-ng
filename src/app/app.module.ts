@@ -10,6 +10,8 @@ import { E404Component } from './e404/e404.component';
 import { HomeComponent } from './home/home.component';
 import { CustomerGetComponent } from './customer/customer-get/customer-get.component';
 import { MenuComponent } from './menu/menu/menu.component';
+import { AboutComponent } from './about/about.component';
+import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MenuComponent } from './menu/menu/menu.component';
     E404Component,
     HomeComponent,
     CustomerGetComponent,
-    MenuComponent
+    MenuComponent,
+    AboutComponent,
+    CustomerAddComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule

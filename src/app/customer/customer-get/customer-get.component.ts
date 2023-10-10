@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Customer } from '../customer.class';
 import { CustomerService } from '../customer.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-customer-get',
@@ -9,14 +10,20 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerGetComponent {
   message: string = "";
-  id: number = 1;
+  urlId!: string;
   cust!: Customer;
   
-  getInput(getId: number) {
-    this.id = +getId
-    console.log(+this.id)
+  constructor(
+    private custSvc: CustomerService,
+    private route: ActivatedRoute
+    ) {}
     
-    this.custSvc.get(this.id).subscribe({
+  ngOnInit(): void {
+    // Gets id from route url params
+    this.urlId = (this.route.snapshot.paramMap.get('id')|| '{}');
+
+    // Get id from route param on initial load
+    this.custSvc.get(+this.urlId).subscribe({
       next: (res) => {
         this.cust = res as Customer
         console.log(res);
@@ -29,28 +36,6 @@ export class CustomerGetComponent {
         }
       }
     });
-  }
-  
-  constructor(
-    private custSvc: CustomerService
-    ) {}
-  
-    ngOnInit(): void {
-
-    // GET BY ID
-    this.custSvc.get(this.id).subscribe({
-      next: (res) => {
-        this.cust = res as Customer
-        console.log(res);
-      },
-      error: (err) => {
-        if(err.status === 404) {
-          this.message = "Customer not found";
-        } else {
-          console.error(err);
-        }
-      }
-     });
 
 
     
