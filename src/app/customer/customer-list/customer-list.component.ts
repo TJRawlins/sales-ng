@@ -10,6 +10,8 @@ import { Customer } from '../customer.class';
 export class CustomerListComponent {
   custs!: Customer[]
   message: string = "";
+  locale: string = "en";
+  substr: string = "";
 
   constructor(
     private custSvc: CustomerService

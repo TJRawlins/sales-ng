@@ -1,5 +1,11 @@
 <div id="table-wrapper">
-    <div class="btn"><a routerLink="/customers/add">Create New +</a></div>
+    <div id="sub-menu">
+        <a id="add-user" routerLink="/customers/add"><i class="fa-solid fa-user-plus"></i></a>
+        <div id="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" [(ngModel)]="substr" placeholder="Search">
+        </div>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -12,12 +18,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let c of custs">
+            <tr *ngFor="let c of custs | searchCustomer:substr">
                 <td>{{c.id}}</td>
                 <td>{{c.code}}</td>
                 <td>{{c.name}}</td>
                 <td>{{c.sales | currency}}</td>
-                <td>{{c.active ? "Yes" : "No"}}</td>
+                <td>{{c.active | bool:locale}}</td>
                 <td><a [routerLink]="['/customers/get/', c.id]">Details</a> | 
                     <a [routerLink]="['/customers/edit/', c.id]">Edit</a>
                 </td>

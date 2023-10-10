@@ -1,19 +1,66 @@
+#sub-menu {
+    display: flex;
+    /* justify-content:space-between; */
+    align-items: center;
+    width: 100%;
+}
+
 #table-wrapper {
     margin: 2rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-div.btn a {
+a#add-user {
     text-decoration: none;
-    color: green;
+    color: rgb(45, 121, 192);
     font-weight: bold;
+    padding: 0.5rem;
 }
 
-div.btn a:hover {
-    color: darkgreen;
+a#add-user:hover {
+    color: rgb(76, 142, 204);
 }
 
 a {
     text-decoration: none;
     color: rgb(45, 121, 192);
+}
+
+#search-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0.25rem;
+    gap: 0.25rem;
+    max-width: 800px !important;
+}
+
+#search-wrapper input {
+    max-width: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px silver solid;
+    overflow: hidden;
+    transition:  2s;
+}
+
+#search-wrapper input:focus {
+    outline: none;
+}
+
+#search-wrapper:hover input {
+    opacity: 1;
+    max-width: 800px;
+    transition: max-width 1s ease-in;
+}
+
+.fa-magnifying-glass {
+    font-size: 1rem;
+    color: rgb(45, 121, 192);
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 1s ease;
 }
