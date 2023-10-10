@@ -35,6 +35,11 @@ export class CustomerGetComponent {
       }
     });
   }
+
+  toggleOn: boolean = false;
+  toggleHide() {
+    this.toggleOn = !this.toggleOn
+  }
     
   ngOnInit(): void {
     let id = +this.route.snapshot.params["id"]

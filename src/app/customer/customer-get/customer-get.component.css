@@ -38,14 +38,18 @@
 
 #btn-container {
     display: flex;
-    justify-content: space-between;
     gap: 1rem;
     width: 100%;
     margin-top: 1rem;
 }
 
+#del-btn-wrapper {
+    width: 115%;
+    margin: 0;
+    padding: 0;
+}
+
 button, a {
-    justify-content: flex-start !important;
     width: 100%;
 }
 
@@ -54,6 +58,10 @@ a {
     color: whitesmoke;
     text-decoration: none;
     width: 100%;
+}
+
+.hide {
+    display: none;
 }
 
 input, input:focus {

@@ -18,7 +18,10 @@
             </div>
             <div id="btn-container">
                 <button class="btn btn-primary"><a [routerLink]="['/customers/edit/', cust.id]">Edit</a></button>
-                <button class="btn btn-danger" (click)="removeCust()">Delete</button>
+                <div id="del-btn-wrapper">
+                    <button class="btn btn-danger" [class.hide]="toggleOn == true" (click)="toggleHide()">Delete</button>
+                    <button class="btn btn-warning hide" (click)="removeCust()" [class.hide]="toggleOn == false" (click)="toggleHide()">Confirm</button>
+                </div>
             </div>
     </div>
 </div>
