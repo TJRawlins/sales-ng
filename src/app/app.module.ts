@@ -12,6 +12,7 @@ import { CustomerGetComponent } from './customer/customer-get/customer-get.compo
 import { MenuComponent } from './menu/menu/menu.component';
 import { AboutComponent } from './about/about.component';
 import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
+import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CustomerAddComponent } from './customer/customer-add/customer-add.compo
     CustomerGetComponent,
     MenuComponent,
     AboutComponent,
-    CustomerAddComponent
+    CustomerAddComponent,
+    CustomerEditComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule

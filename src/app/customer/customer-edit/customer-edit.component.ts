@@ -4,11 +4,11 @@ import { CustomerService } from '../customer.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-customer-get',
-  templateUrl: './customer-get.component.html',
-  styleUrls: ['./customer-get.component.css']
+  selector: 'app-customer-edit',
+  templateUrl: './customer-edit.component.html',
+  styleUrls: ['./customer-edit.component.css']
 })
-export class CustomerGetComponent {
+export class CustomerEditComponent {
   message: string = "";
   cust: Customer = new Customer();
   
@@ -18,12 +18,11 @@ export class CustomerGetComponent {
     private router: Router
    ) {}
 
-  removeCust(): void {
-  //DELETE CUSTOMER
-    let id = +this.route.snapshot.params["id"]
-    this.custSvc.remove(id).subscribe({
-      next: () => {
-        console.log("Deleted");
+  save(): void {
+    // UPDATE CUSTOMER
+    this.custSvc.change(this.cust).subscribe({
+      next: (res) => {
+        console.log(res);
         this.router.navigateByUrl("/customers");
       },
       error: (err) => {
@@ -38,7 +37,6 @@ export class CustomerGetComponent {
     
   ngOnInit(): void {
     let id = +this.route.snapshot.params["id"]
-
     this.custSvc.get(id).subscribe({
       next: (res) => {
         this.cust = res
@@ -52,6 +50,5 @@ export class CustomerGetComponent {
         }
       }
     });
-    
   }
 }

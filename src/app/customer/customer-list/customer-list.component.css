@@ -1,3 +1,8 @@
+#table-wrapper {
+    margin: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
 div.btn a {
     text-decoration: none;
     color: green;
@@ -6,4 +11,9 @@ div.btn a {
 
 div.btn a:hover {
     color: darkgreen;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(45, 121, 192);
 }

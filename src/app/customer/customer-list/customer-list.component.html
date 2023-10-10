@@ -1,4 +1,4 @@
-<div>
+<div id="table-wrapper">
     <div class="btn"><a routerLink="/customers/add">Create New +</a></div>
     <table class="table table-striped">
         <thead>
@@ -19,7 +19,7 @@
                 <td>{{c.sales | currency}}</td>
                 <td>{{c.active ? "Yes" : "No"}}</td>
                 <td><a [routerLink]="['/customers/get/', c.id]">Details</a> | 
-                    <a [routerLink]="['/customers/get/', c.id]">Edit</a>
+                    <a [routerLink]="['/customers/edit/', c.id]">Edit</a>
                 </td>
             </tr>
         </tbody>

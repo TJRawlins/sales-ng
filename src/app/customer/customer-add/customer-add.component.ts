@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Customer } from '../customer.class';
 import { CustomerService } from '../customer.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -11,23 +11,20 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CustomerAddComponent {
   message: string = "";
+  cust: Customer = new Customer();
 
   constructor(
-    private custSvc: CustomerService
+    private custSvc: CustomerService,
+    private router: Router
     ) {}
 
-    ngOnInit(): void {
-
-    let cust = new Customer;
-    cust.code = "OO";
-    cust.name = "Customer OO";
-    cust.sales = 1000;
-    cust.active = true;
+    addCust(): void {
       
       // ADD CUSTOMER
-      this.custSvc.create(cust).subscribe({
+      this.custSvc.create(this.cust).subscribe({
         next: (res) => {
           console.log(res);
+          this.router.navigateByUrl("/customers");
         },
         error: (err) => {
           if(err.status === 404) {
@@ -37,6 +34,10 @@ export class CustomerAddComponent {
           }
         }
       });
+    }
+
+    ngOnInit(): void {
+
     }
 
 

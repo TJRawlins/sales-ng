@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { CustomerGetComponent } from './customer/customer-get/customer-get.component';
 import { AboutComponent } from './about/about.component';
 import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
+import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"/home", pathMatch:"full"},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"customers", component: CustomerListComponent},
   {path:"customers/get/:id", component: CustomerGetComponent},
   {path:"customers/add", component: CustomerAddComponent},
+  {path:"customers/edit/:id", component: CustomerEditComponent},
   {path:"about", component: AboutComponent},
   {path:"**", component: E404Component}
 ]

@@ -1,24 +1,24 @@
-<div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Sales</th>
-                <th>Active</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{cust.id}}</td>
-                <td>{{cust.code}}</td>
-                <td>{{cust.name}}</td>
-                <td>{{cust.sales | currency}}</td>
-                <td>{{cust.active ? "Yes" : "No"}}</td>
-                <td><a [routerLink]="['/customers/', cust.id]">Edit</a> | <a [routerLink]="['/customers/', cust.id]">Delete</a></td>
-            </tr>
-        </tbody>
-    </table>
+<div id="create-wrapper">
+    <div id="create-card">
+            <div class="item">
+                <label for="">Code:</label>
+                <input type="text" name="" id="" [(ngModel)]="cust.code" readonly>
+            </div>
+            <div class="item">
+                <label for="">Name:</label>
+                <input type="text" name="" id="" [(ngModel)]="cust.name" readonly>
+            </div>
+            <div class="item">
+                <label for="">Sales:</label>
+                <input type="text" name="" id="" [(ngModel)]="cust.sales" readonly>
+            </div>
+            <div class="item item-active">
+                <label for="">Active:</label>
+                <input type="checkbox" name="" id="" [(ngModel)]="cust.active" checked>
+            </div>
+            <div id="btn-container">
+                <button class="btn btn-primary"><a [routerLink]="['/customers/edit/', cust.id]">Edit</a></button>
+                <button class="btn btn-danger" (click)="removeCust()">Delete</button>
+            </div>
+    </div>
 </div>
