@@ -9,16 +9,16 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Sales</th>
-                <th>Active</th>
+                <th>Id<i class="fa-solid fa-sort" (click)="sortOrder('id')"></i></th>
+                <th>Code<i class="fa-solid fa-sort" (click)="sortOrder('code')"></i></th>
+                <th>Name<i class="fa-solid fa-sort" (click)="sortOrder('name')"></i></th>
+                <th>Sales<i class="fa-solid fa-sort" (click)="sortOrder('sales')"></i></th>
+                <th>Active<i class="fa-solid fa-sort" (click)="sortOrder('active')"></i></th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let c of custs | searchCustomer:substr">
+            <tr *ngFor="let c of custs | searchCustomer:substr | sort:sortCol:sortAsc">
                 <td>{{c.id}}</td>
                 <td>{{c.code}}</td>
                 <td>{{c.name}}</td>

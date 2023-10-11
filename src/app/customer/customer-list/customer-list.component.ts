@@ -12,6 +12,17 @@ export class CustomerListComponent {
   message: string = "";
   locale: string = "en";
   substr: string = "";
+  sortCol: string = "name";
+  sortAsc: boolean = true;
+
+  sortOrder(col: string): void {
+    if(col === this.sortCol) {
+      this.sortAsc = !this.sortAsc
+      return;
+    }
+    this.sortCol = col;
+    this.sortAsc = true
+  }
 
   constructor(
     private custSvc: CustomerService
