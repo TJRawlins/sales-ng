@@ -24,3 +24,9 @@ nav ul li a {
 nav ul li a:hover {
     background-color: rgb(40, 106, 168);
 }
+
+nav ul li:last-child {
+    position: absolute;
+    right: 0;
+    
+}

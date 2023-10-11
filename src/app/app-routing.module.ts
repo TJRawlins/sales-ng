@@ -11,9 +11,11 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { EmployeeGetComponent } from './employee/employee-get/employee-get.component';
 import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
 import { EmployeeAddComponent } from './employee/employee-add/employee-add.component';
+import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"/home", pathMatch:"full"},
+  {path:"logout", component: EmployeeLoginComponent},
   {path:"home", component: HomeComponent},
   {path:"customers", component: CustomerListComponent},
   {path:"customers/get/:id", component: CustomerGetComponent},

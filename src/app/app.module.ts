@@ -21,6 +21,7 @@ import { EmployeeGetComponent } from './employee/employee-get/employee-get.compo
 import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
 import { EmployeeAddComponent } from './employee/employee-add/employee-add.component';
 import { SortPipe } from './misc/sort.pipe';
+import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SortPipe } from './misc/sort.pipe';
     EmployeeGetComponent,
     EmployeeEditComponent,
     EmployeeAddComponent,
-    SortPipe
+    SortPipe,
+    EmployeeLoginComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule
