@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Customer } from '../customer.class';
 import { CustomerService } from '../customer.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +19,6 @@ export class CustomerAddComponent {
     ) {}
 
     addCust(): void {
-      
       // ADD CUSTOMER
       this.custSvc.create(this.cust).subscribe({
         next: (res) => {

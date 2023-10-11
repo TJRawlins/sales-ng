@@ -19,6 +19,7 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { SearchEmployeePipe } from './employee/search-employee.pipe';
 import { EmployeeGetComponent } from './employee/employee-get/employee-get.component';
 import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
+import { EmployeeAddComponent } from './employee/employee-add/employee-add.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.co
     EmployeeListComponent,
     SearchEmployeePipe,
     EmployeeGetComponent,
-    EmployeeEditComponent
+    EmployeeEditComponent,
+    EmployeeAddComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule
