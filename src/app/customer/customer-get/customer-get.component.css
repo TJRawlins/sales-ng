@@ -60,6 +60,14 @@ a {
     width: 100%;
 }
 
+.btn-warning {
+    color: rgb(158, 84, 0);
+    border: 1px solid rgb(158, 84, 0);
+}
+.btn-warning:hover {
+    color: rgb(131, 70, 1);
+}
+
 .hide {
     display: none;
 }
