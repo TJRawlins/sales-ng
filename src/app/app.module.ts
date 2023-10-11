@@ -15,6 +15,8 @@ import { CustomerAddComponent } from './customer/customer-add/customer-add.compo
 import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
 import { BoolPipe } from './misc/bool.pipe';
 import { SearchCustomerPipe } from './customer/search-customer.pipe';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { SearchEmployeePipe } from './employee/search-employee.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SearchCustomerPipe } from './customer/search-customer.pipe';
     CustomerAddComponent,
     CustomerEditComponent,
     BoolPipe,
-    SearchCustomerPipe
+    SearchCustomerPipe,
+    EmployeeListComponent,
+    SearchEmployeePipe
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule

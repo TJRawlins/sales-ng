@@ -1,0 +1,29 @@
+<div id="table-wrapper">
+    <div id="sub-menu">
+        <a id="add-user" routerLink="/employee/add"><i class="fa-solid fa-user-plus"></i></a>
+        <div id="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" [(ngModel)]="substr" placeholder="Search">
+        </div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Active</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of emps | searchEmployee:substr">
+                <td>{{e.id}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.active | bool:locale}}</td>
+                <td><a [routerLink]="['/employees/get/', e.id]">Details</a> | 
+                    <a [routerLink]="['/employees/edit/', e.id]">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
