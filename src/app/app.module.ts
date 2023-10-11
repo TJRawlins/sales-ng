@@ -18,6 +18,7 @@ import { SearchCustomerPipe } from './customer/search-customer.pipe';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { SearchEmployeePipe } from './employee/search-employee.pipe';
 import { EmployeeGetComponent } from './employee/employee-get/employee-get.component';
+import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { EmployeeGetComponent } from './employee/employee-get/employee-get.compo
     SearchCustomerPipe,
     EmployeeListComponent,
     SearchEmployeePipe,
-    EmployeeGetComponent
+    EmployeeGetComponent,
+    EmployeeEditComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule
