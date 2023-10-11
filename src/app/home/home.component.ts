@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SystemService } from '../system.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  
+  constructor(
+    private sysSvc: SystemService,
+  ) {}
 
+  emp = this.sysSvc.loggedInEmp
+  
 }

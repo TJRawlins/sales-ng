@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Employee } from '../employee.class';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { SystemService } from 'src/app/system.service';
 
 @Component({
   selector: 'app-employee-login',
@@ -13,15 +14,17 @@ export class EmployeeLoginComponent {
 
   constructor(
     private empSvc: LoginService,
+    private sysSvc: SystemService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
 
   login(): void {
-    // UPDATE EMPLOYEE
+    this.sysSvc.loggedInEmp = null;
     this.empSvc.loginSvc(this.emp.email, this.emp.password).subscribe({
       next: (res) => {
         console.log(res);
+        this.sysSvc.loggedInEmp = res;
         this.router.navigateByUrl("/home");
       },
       error: (err) => {

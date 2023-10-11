@@ -13,6 +13,18 @@ export class EmployeeListComponent {
   locale: string = "en";
   substr: string = "";
 
+  sortCol: string = "email";
+  sortAsc: boolean = true;
+
+  sortOrder(col: string): void {
+    if(col === this.sortCol) {
+      this.sortAsc = !this.sortAsc
+      return;
+    }
+    this.sortCol = col;
+    this.sortAsc = true
+  }
+  
   constructor(
     private empSvc: EmployeeService
     ) {}

@@ -10,14 +10,14 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Active</th>
+                <th>Id<i class="fa-solid fa-sort" (click)="sortOrder('id')"></i></th>
+                <th>Email<i class="fa-solid fa-sort" (click)="sortOrder('email')"></i></th>
+                <th>Active<i class="fa-solid fa-sort" (click)="sortOrder('active')"></i></th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let e of emps | searchEmployee:substr">
+            <tr *ngFor="let e of emps | searchEmployee:substr | sort:sortCol:sortAsc">
                 <td>{{e.id}}</td>
                 <td>{{e.email}}</td>
                 <td>{{e.active | bool:locale}}</td>

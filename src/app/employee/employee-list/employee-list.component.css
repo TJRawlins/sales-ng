@@ -75,3 +75,13 @@ a#add-user:hover {
 .fa-magnifying-glass:hover {
     color: #ffffff;
 }
+
+.fa-sort {
+    margin-left: 0.5rem;
+    color: #e2e2e2;
+    cursor: pointer;
+}
+
+.fa-sort:hover {
+    color: #cacaca;
+}

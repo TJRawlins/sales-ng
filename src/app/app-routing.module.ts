@@ -14,8 +14,8 @@ import { EmployeeAddComponent } from './employee/employee-add/employee-add.compo
 import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
 
 const routes: Routes = [
-  {path:"", redirectTo:"/home", pathMatch:"full"},
-  {path:"logout", component: EmployeeLoginComponent},
+  {path:"", redirectTo:"/login", pathMatch:"full"},
+  {path:"login", component: EmployeeLoginComponent},
   {path:"home", component: HomeComponent},
   {path:"customers", component: CustomerListComponent},
   {path:"customers/get/:id", component: CustomerGetComponent},
