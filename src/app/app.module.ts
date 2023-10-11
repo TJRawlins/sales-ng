@@ -17,6 +17,7 @@ import { BoolPipe } from './misc/bool.pipe';
 import { SearchCustomerPipe } from './customer/search-customer.pipe';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { SearchEmployeePipe } from './employee/search-employee.pipe';
+import { EmployeeGetComponent } from './employee/employee-get/employee-get.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SearchEmployeePipe } from './employee/search-employee.pipe';
     BoolPipe,
     SearchCustomerPipe,
     EmployeeListComponent,
-    SearchEmployeePipe
+    SearchEmployeePipe,
+    EmployeeGetComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule

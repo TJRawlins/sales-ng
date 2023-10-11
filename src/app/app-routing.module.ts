@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
 import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { EmployeeGetComponent } from './employee/employee-get/employee-get.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"/home", pathMatch:"full"},
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path:"customers/add", component: CustomerAddComponent},
   {path:"customers/edit/:id", component: CustomerEditComponent},
   {path:"employees", component: EmployeeListComponent},
-  // {path:"employees/get/:id", component: EmployeeGetComponent},
+  {path:"employees/get/:id", component: EmployeeGetComponent},
   // {path:"employees/add", component: EmployeeAddComponent},
   // {path:"employees/edit/:id", component: EmployeeEditComponent},
   {path:"about", component: AboutComponent},

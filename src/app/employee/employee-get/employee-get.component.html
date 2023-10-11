@@ -1,0 +1,19 @@
+<div id="create-wrapper">
+    <div id="create-card">
+            <div class="item">
+                <label for="">Code:</label>
+                <input type="text" name="" id="" [(ngModel)]="emp.email" readonly>
+            </div>
+            <div class="item item-active">
+                <label for="">Active:</label>
+                <input type="checkbox" name="" id="" [(ngModel)]="emp.active" checked>
+            </div>
+            <div id="btn-container">
+                <button class="btn btn-primary"><a [routerLink]="['/employees/edit/', emp.id]">Edit</a></button>
+                <div id="del-btn-wrapper">
+                    <button class="btn btn-danger" [class.hide]="toggleOn == true" (click)="toggleHide()">Delete</button>
+                    <button class="btn btn-warning hide" (click)="removeEmp()" [class.hide]="toggleOn == false" (click)="toggleHide()">Confirm</button>
+                </div>
+            </div>
+    </div>
+</div>
