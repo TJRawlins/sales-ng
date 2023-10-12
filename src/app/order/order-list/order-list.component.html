@@ -11,8 +11,9 @@
         <thead>
             <tr>
                 <th>Id<i class="fa-solid fa-sort" (click)="sortOrder('id')"></i></th>
-                <th>Description<i class="fa-solid fa-sort" (click)="sortOrder('description')"></i></th>
                 <th>Date<i class="fa-solid fa-sort" (click)="sortOrder('date')"></i></th>
+                <th>Description<i class="fa-solid fa-sort" (click)="sortOrder('description')"></i></th>
+                <th>Total<i class="fa-solid fa-sort" (click)="sortOrder('total')"></i></th>
                 <th>Customer<i class="fa-solid fa-sort" (click)="sortOrder('customer')"></i></th>
                 <th>Actions</th>
             </tr>
@@ -20,8 +21,9 @@
         <tbody>
             <tr *ngFor="let o of ords | searchOrder:substr | sort:sortCol:sortAsc">
                 <td>{{o.id}}</td>
-                <td>{{o.description}}</td>
                 <td>{{o.date}}</td>
+                <td>{{o.description}}</td>
+                <td>{{o.total}}</td>
                 <td>{{o.customer?.name}}</td>
                 <td><a [routerLink]="['/orders/get/', o.id]">Details</a> | 
                     <a [routerLink]="['/orders/edit/', o.id]">Edit</a>

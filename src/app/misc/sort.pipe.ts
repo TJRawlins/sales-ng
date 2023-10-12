@@ -15,7 +15,6 @@ export class SortPipe implements PipeTransform {
       if (a[column].name) {
         x = a[column].name.toString().toLowerCase();
         y = b[column].name.toString().toLowerCase();
-        console.log(x)
       } else {
         x = typeof a[column] === "number" ? a[column] : a[column].toString().toLowerCase();
         y = typeof b[column] === "number" ? b[column] : b[column].toString().toLowerCase();

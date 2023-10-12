@@ -15,9 +15,4 @@ export class MenuComponent {
     new Menu("ABOUT", "/about"),
     new Menu("LOG OUT", "/login"),
   ];
-
-  active: boolean = false;
-  toggleActive() {
-    this.active = !this.active
-  }
 }

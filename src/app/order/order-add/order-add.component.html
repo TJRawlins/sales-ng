@@ -14,6 +14,10 @@
                 <input type="text" name="" id="" [(ngModel)]="ord.status">
             </div>
             <div class="item">
+                <label for="">Total:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.total">
+            </div>
+            <div class="item">
                 <label for="">Customer:</label>
                 <select type="text" name="" id="" [(ngModel)]="ord.customerId">
                     <option *ngFor="let x of custs" value="{{x.id}}">{{x.name}}</option>
