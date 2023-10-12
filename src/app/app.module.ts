@@ -25,6 +25,7 @@ import { EmployeeLoginComponent } from './employee/employee-login/employee-login
 import { OrderAddComponent } from './order/order-add/order-add.component';
 import { OrderListComponent } from './order/order-list/order-list.component';
 import { SearchOrderPipe } from './order/search-order.pipe';
+import { OrderGetComponent } from './order/order-get/order-get.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { SearchOrderPipe } from './order/search-order.pipe';
     EmployeeLoginComponent,
     OrderAddComponent,
     OrderListComponent,
-    SearchOrderPipe
+    SearchOrderPipe,
+    OrderGetComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule

@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<div id="create-wrapper">
+    <div id="create-card">
+            <div class="item">
+                <label for="">Id:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.id" readonly>
+            </div>
+            <div class="item">
+                <label for="">Date:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.date" readonly>
+            </div>
+            <div class="item">
+                <label for="">Description:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.description" readonly>
+            </div>
+            <div class="item">
+                <label for="">Total:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.total" readonly>
+            </div>
+            <div class="item">
+                <label for="">Status:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.status" readonly>
+            </div>
+            <div id="btn-container">
+                <button class="btn btn-primary"><a [routerLink]="['/orders/edit/', ord.id]">Edit</a></button>
+                <div id="del-btn-wrapper">
+                    <button class="btn btn-danger" [class.hide]="toggleOn == true" (click)="toggleHide()">Delete</button>
+                    <button class="btn btn-warning hide" (click)="removeOrd()" [class.hide]="toggleOn == false" (click)="toggleHide()">Confirm</button>
+                </div>
+            </div>
+    </div>
+</div>
