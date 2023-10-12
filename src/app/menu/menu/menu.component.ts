@@ -11,7 +11,13 @@ export class MenuComponent {
     new Menu("HOME", "/home"),
     new Menu("CUSTOMERS", "/customers"),
     new Menu("EMPLOYEES", "/employees"),
+    new Menu("ORDERS", "/orders"),
     new Menu("ABOUT", "/about"),
     new Menu("LOG OUT", "/login"),
   ];
+
+  active: boolean = false;
+  toggleActive() {
+    this.active = !this.active
+  }
 }

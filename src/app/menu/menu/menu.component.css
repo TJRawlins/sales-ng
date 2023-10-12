@@ -30,3 +30,7 @@ nav ul li:last-child {
     right: 0;
     
 }
+
+.active {
+    background-color: rgb(40, 106, 168);
+}

@@ -2,8 +2,9 @@
 <div id="copmponent">
     <nav>
         <ul>
+            <!-- <li *ngFor="let m of menus" [class.active]="active == true" (click)="toggleActive()"> -->
             <li *ngFor="let m of menus">
-                <a routerLink="{{m.route}}">{{m.display}}</a>
+                <a routerLink="{{m.route}}">{{m.display}} </a>
             </li>
         </ul>
     </nav>

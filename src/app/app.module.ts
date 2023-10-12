@@ -22,6 +22,9 @@ import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.co
 import { EmployeeAddComponent } from './employee/employee-add/employee-add.component';
 import { SortPipe } from './misc/sort.pipe';
 import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
+import { OrderAddComponent } from './order/order-add/order-add.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
+import { SearchOrderPipe } from './order/search-order.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { EmployeeLoginComponent } from './employee/employee-login/employee-login
     EmployeeEditComponent,
     EmployeeAddComponent,
     SortPipe,
-    EmployeeLoginComponent
+    EmployeeLoginComponent,
+    OrderAddComponent,
+    OrderListComponent,
+    SearchOrderPipe
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule

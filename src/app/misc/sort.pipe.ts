@@ -10,8 +10,16 @@ export class SortPipe implements PipeTransform {
     if(typeof arr === "undefined" || typeof arr === null) return arr;
 
     const compareFn = (a: any, b: any): number => {
-      let x = typeof a[column] === "number" ? a[column] : a[column].toString().toLowerCase();
-      let y = typeof b[column] === "number" ? b[column] : b[column].toString().toLowerCase();
+      let x = null;
+      let y = null;
+      if (a[column].name) {
+        x = a[column].name.toString().toLowerCase();
+        y = b[column].name.toString().toLowerCase();
+        console.log(x)
+      } else {
+        x = typeof a[column] === "number" ? a[column] : a[column].toString().toLowerCase();
+        y = typeof b[column] === "number" ? b[column] : b[column].toString().toLowerCase();
+      }
       if(x === y) return 0;
       if(asc) {
         return (x > y) ? 1 : -1;

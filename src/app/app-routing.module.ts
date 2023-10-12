@@ -12,6 +12,8 @@ import { EmployeeGetComponent } from './employee/employee-get/employee-get.compo
 import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
 import { EmployeeAddComponent } from './employee/employee-add/employee-add.component';
 import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
+import { OrderAddComponent } from './order/order-add/order-add.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"/login", pathMatch:"full"},
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path:"employees/get/:id", component: EmployeeGetComponent},
   {path:"employees/add", component: EmployeeAddComponent},
   {path:"employees/edit/:id", component: EmployeeEditComponent},
+  {path:"orders", component: OrderListComponent},
+  {path:"orders/add", component: OrderAddComponent},
   {path:"about", component: AboutComponent},
   {path:"**", component: E404Component}
 ]

@@ -1,0 +1,24 @@
+<app-menu></app-menu>
+<div id="create-wrapper">
+    <div id="create-card">
+            <div class="item">
+                <label for="">Date:</label>
+                <input type="date" name="" id="date" [(ngModel)]="ord.date">
+            </div>
+            <div class="item">
+                <label for="">Description:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.description">
+            </div>
+            <div class="item">
+                <label for="">Status:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.status">
+            </div>
+            <div class="item">
+                <label for="">Customer:</label>
+                <select type="text" name="" id="" [(ngModel)]="ord.customerId">
+                    <option *ngFor="let x of custs" value="{{x.id}}">{{x.name}}</option>
+                </select>
+            </div>
+        <button class="btn btn-primary" (click)="addOrd()">Create</button>
+    </div>
+</div>
