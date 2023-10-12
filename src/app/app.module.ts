@@ -26,6 +26,7 @@ import { OrderAddComponent } from './order/order-add/order-add.component';
 import { OrderListComponent } from './order/order-list/order-list.component';
 import { SearchOrderPipe } from './order/search-order.pipe';
 import { OrderGetComponent } from './order/order-get/order-get.component';
+import { OrderEditComponent } from './order/order-edit/order-edit.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { OrderGetComponent } from './order/order-get/order-get.component';
     OrderAddComponent,
     OrderListComponent,
     SearchOrderPipe,
-    OrderGetComponent
+    OrderGetComponent,
+    OrderEditComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule

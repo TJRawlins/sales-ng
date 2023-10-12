@@ -23,7 +23,7 @@
                 <td>{{o.id}}</td>
                 <td>{{o.date}}</td>
                 <td>{{o.description}}</td>
-                <td>{{o.total}}</td>
+                <td>{{o.total | currency}}</td>
                 <td>{{o.customer?.name}}</td>
                 <td><a [routerLink]="['/orders/get/', o.id]">Details</a> | 
                     <a [routerLink]="['/orders/edit/', o.id]">Edit</a>

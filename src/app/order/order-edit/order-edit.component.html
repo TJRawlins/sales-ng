@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<div id="create-wrapper">
+    <div id="create-card">
+        <div class="item">
+            <label for="">Id:</label>
+            <input type="text" name="" id="" [(ngModel)]="ord.id" readonly>
+            </div>
+            <div class="item">
+                <label for="">Date:</label>
+                <input type="date" name="" id="date" [(ngModel)]="ord.date">
+            </div>
+            <div class="item">
+                <label for="">Description:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.description">
+            </div>
+            <div class="item">
+                <label for="">Total:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.total">
+            </div>
+            <div class="item">
+                <label for="">Status:</label>
+                <input type="text" name="" id="" [(ngModel)]="ord.status">
+            </div>
+            <div id="btn-container">
+                <button class="btn btn-primary" (click)="save()">Submit</button>
+                <button class="btn btn-primary" (click)="goBack()">Back</button>
+            </div>
+    </div>
+</div>
