@@ -26,6 +26,15 @@ export class OrderService {
   change(ord: Order): Observable<any> {
     return this.http.put(`${this.baseUrl}/${ord.id}`, ord) as Observable<any>;
   }
+  ok(ord: Order): Observable<any> {
+    return this.http.put(`${this.baseUrl}/ok/${ord.id}`, ord) as Observable<any>;
+  }
+  backorder(ord: Order): Observable<any> {
+    return this.http.put(`${this.baseUrl}/bo/${ord.id}`, ord) as Observable<any>;
+  }
+  closed(ord: Order): Observable<any> {
+    return this.http.put(`${this.baseUrl}/closed/${ord.id}`, ord) as Observable<any>;
+  }
   remove(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`) as Observable<any>;
   }

@@ -13,6 +13,5 @@ export class MenuComponent {
     new Menu("EMPLOYEES", "/employees"),
     new Menu("ORDERS", "/orders"),
     new Menu("ABOUT", "/about"),
-    new Menu("LOG OUT", "/login"),
   ];
 }

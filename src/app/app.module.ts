@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {DatePipe} from '@angular/common';
+
 
 import { AppComponent } from './app.component';
 import { CustomerListComponent } from './customer/customer-list/customer-list.component';
@@ -27,6 +29,9 @@ import { OrderListComponent } from './order/order-list/order-list.component';
 import { SearchOrderPipe } from './order/search-order.pipe';
 import { OrderGetComponent } from './order/order-get/order-get.component';
 import { OrderEditComponent } from './order/order-edit/order-edit.component';
+import { OrderLinesComponent } from './order/order-lines/order-lines.component';
+import { OrderlineListComponent } from './orderline/orderline-list/orderline-list.component';
+import { OrderlineAddComponent } from './orderline/orderline-add/orderline-add.component';
 
 @NgModule({
   declarations: [
@@ -52,10 +57,13 @@ import { OrderEditComponent } from './order/order-edit/order-edit.component';
     OrderListComponent,
     SearchOrderPipe,
     OrderGetComponent,
-    OrderEditComponent
+    OrderEditComponent,
+    OrderLinesComponent,
+    OrderlineListComponent,
+    OrderlineAddComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule, AppRoutingModule
+    BrowserModule, HttpClientModule, FormsModule, AppRoutingModule, DatePipe
   ],
   providers: [],
   bootstrap: [AppComponent]

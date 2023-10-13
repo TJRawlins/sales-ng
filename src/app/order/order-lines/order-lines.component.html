@@ -1,0 +1,66 @@
+<app-menu></app-menu>
+<div id="table-wrapper">
+    <div id="sub-menu">
+        <a id="add-user" [routerLink]="['orderline/add/', ord.id]"><i class="fa-solid fa-cart-plus"></i></a>
+        <div id="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="Search">
+        </div>
+    </div>
+    <!-- Display Order -->
+    <table class="table table-striped">
+        <thead>
+            <!-- <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Total</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Update Status</th>
+            </tr> -->
+        </thead>
+        <tbody id="order-item">
+            <tr>
+                <td>{{ord.id}}</td>
+                <td>{{ord.date}}</td>
+                <td>{{ord.description}}</td>
+                <td>{{ord.total | currency}}</td>
+                <td>{{ord.customer?.name}}</td>
+                <td>{{ord.status}}</td>
+                <td>
+                    <button (click)="ok()" class="btn-circle stat-green">OK</button>
+                    <button (click)="backorder()" class="btn-circle stat-orange">B/O</button>
+                    <button (click)="closed()" class="btn-circle stat-red">C</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Display Orderlines -->
+    <!-- for order to be created on current order -->
+    <table class="table table-striped" *ngIf="ord">
+        <thead>
+            <tr>
+                <th>Id<i class="fa-solid fa-sort"></i></th>
+                <th>Item<i class="fa-solid fa-sort"></i></th>
+                <th>Quantity<i class="fa-solid fa-sort" ></i></th>
+                <th>Price<i class="fa-solid fa-sort" ></i></th>
+                <th>Subtotal<i class="fa-solid fa-sort"></i></th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let o of ord.orderlines">
+                <td>{{o.id}}</td>
+                <td>{{o.item?.name}}</td>
+                <td>{{o.quantity}}</td>
+                <td>{{o.item?.price | currency}}</td>
+                <td>{{o.quantity * o.item?.price! | currency}}</td>
+                <td>
+                    <a [routerLink]="['/orders/get/', o.id]">Details</a> |
+                    <a [routerLink]="['/orders/edit/', o.id]">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

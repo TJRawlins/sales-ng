@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <div id="table-wrapper">
     <div id="sub-menu">
-        <a id="add-user" routerLink="/orders/add"><i class="fa-solid fa-user-plus"></i></a>
+        <a id="add-user" routerLink="/orders/add"><i class="fa-solid fa-plus"></i></a>
         <div id="search-wrapper">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="search" [(ngModel)]="substr" placeholder="Search">
@@ -26,7 +26,8 @@
                 <td>{{o.total | currency}}</td>
                 <td>{{o.customer?.name}}</td>
                 <td><a [routerLink]="['/orders/get/', o.id]">Details</a> | 
-                    <a [routerLink]="['/orders/edit/', o.id]">Edit</a>
+                    <a [routerLink]="['/orders/edit/', o.id]">Edit</a> | 
+                    <a [routerLink]="['/orders/lines/', o.id]">Lines</a>
                 </td>
             </tr>
         </tbody>

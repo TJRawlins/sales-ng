@@ -12,6 +12,7 @@ export class SortPipe implements PipeTransform {
     const compareFn = (a: any, b: any): number => {
       let x = null;
       let y = null;
+      // Foreign key sort (orders > customer name)
       if (a[column].name) {
         x = a[column].name.toString().toLowerCase();
         y = b[column].name.toString().toLowerCase();
