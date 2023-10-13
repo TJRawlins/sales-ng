@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { SystemService } from 'src/app/system.service';
 import { OrderService } from '../order.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Order } from '../order.class';
+import { OrderlineService } from 'src/app/orderline/orderline.service';
 
 
 @Component({
@@ -17,6 +18,8 @@ export class OrderLinesComponent {
   constructor(
     private sysSvc: SystemService,
     private ordSvc: OrderService,
+    private olSvc: OrderlineService,
+    private router: Router,
     private route: ActivatedRoute
   ){}
 
@@ -59,6 +62,22 @@ export class OrderLinesComponent {
         this.ord = res;
       }
     })
+  }
+
+  removeOl(id: number): void {
+    //DELETE ORDER
+    this.olSvc.remove(id).subscribe({
+      next: () => {
+        console.log("Deleted");
+        this.refresh();
+      },
+      error: (err) => console.error(err)
+    });
+  }
+
+
+  toggleHide(i:number) {
+    document.querySelectorAll('.confirm')[i].classList.toggle('hide')
   }
 
   ngOnInit(): void {
