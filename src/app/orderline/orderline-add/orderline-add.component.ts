@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OrderlineService } from '../orderline.service';
 import { Item } from 'src/app/item/item.class';
 import { ItemService } from 'src/app/item/item.service';
+import { SystemService } from 'src/app/system.service';
 
 @Component({
   selector: 'app-orderline-add',
@@ -12,19 +13,23 @@ import { ItemService } from 'src/app/item/item.service';
 })
 export class OrderlineAddComponent {
 
+  // Need to add "new Orderline() so that it gets an actual instance to bind to"
   ord1: Orderline = new Orderline();
-  items!: Item[];
+  // default the items property to array to prevent undefined r-squig. Alternatively, add a ! after items (items!:)
+  items: Item[] = [];
 
   constructor(
+    private sysSvc: SystemService,
     private olSvc: OrderlineService,
     private itemSvc: ItemService,
     private router: Router,
+    // used to read path variables
     private route: ActivatedRoute
   ){}
 
 
   addOrd(): void {
-    // ADD CUSTOMER
+    // ADD ORDERLINE
     this.olSvc.create(this.ord1).subscribe({
       next: (res) => {
         console.log(res);
@@ -36,7 +41,9 @@ export class OrderlineAddComponent {
 
 
   ngOnInit(): void {
+    // FOREIGN KEY - Use ActiveRoute to get the url id variable (related to app-routing module), then assign to order id
     this.ord1.orderId = +this.route.snapshot.params["oid"]
+    // Get the items list when page loads
     this.itemSvc.list().subscribe({
       next: (res) => {
         console.debug(res)

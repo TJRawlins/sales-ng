@@ -2,14 +2,6 @@
 <div id="create-wrapper">
     <div id="create-card">
             <div class="item">
-                <label for="">Id:</label>
-                <input type="text" name="" id="" [(ngModel)]="ord1.id" readonly>
-            </div>
-            <div class="item">
-                <label for="">OrderId:</label>
-                <input type="text" name="" id="" [(ngModel)]="ord1.orderId" readonly>
-            </div>
-            <div class="item">
                 <label for="">Item:</label>
                 <select type="text" name="" id="" [(ngModel)]="ord1.ItemId">
                     <option *ngFor="let x of items" value="{{x.id}}">{{x.name}}</option>
@@ -17,7 +9,7 @@
             </div>
             <div class="item">
                 <label for="">Quantity:</label>
-                <input type="text" name="" id="" [(ngModel)]="ord1.quantity">
+                <input type="number" name="" id="" [(ngModel)]="ord1.quantity">
             </div>
         <button class="btn btn-primary" (click)="addOrd()">Create</button>
     </div>

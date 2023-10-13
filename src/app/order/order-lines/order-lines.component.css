@@ -32,6 +32,7 @@
 
 #order-item td:last-of-type {
     padding: 0;
+    padding-right: 1rem;
 }
 
 #order-item td span {
@@ -50,8 +51,10 @@
     font-size: 0.75rem;
     font-weight: bold;
     color: #fff;
-    width: 100%;
+    width: 60px;
     border: none;
+    border-radius: 15px;
+    margin-left: 0.25rem;
     /* border-bottom: 1px solid rgb(175, 175, 175); */
     transition: 0.25s all ease;
 }
@@ -62,8 +65,8 @@
 }
 
 .btn-circle:hover {
-    transform: translateY(-2px);
-    box-shadow: rgba(38, 57, 77, 0.664) 0px 10px 10px -5px;
+    /* transform: translateY(-2px); */
+    /* box-shadow: rgba(38, 57, 77, 0.664) 0px 10px 10px -5px; */
 }
 
 .btn-circle:active {
@@ -71,21 +74,21 @@
     box-shadow: none;
 }
 
-.stat-green {
+/* .stat-green {
     border-left: 10px solid rgb(36, 187, 36);
-}
+} */
 .stat-green:hover {
     background-color: rgb(36, 187, 36);
 }
-.stat-orange {
+/* .stat-orange {
     border-left: 10px solid rgb(211, 171, 40);
-}
+} */
 .stat-orange:hover {    
     background-color: rgb(211, 171, 40);
 }
-.stat-red {
+/* .stat-red {
     border-left: 10px solid rgb(204, 39, 39);
-}
+} */
 .stat-red:hover {    
     background-color: rgb(204, 39, 39);
 }

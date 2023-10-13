@@ -54,8 +54,8 @@
                 <td>{{o.item?.price | currency}}</td>
                 <td>{{o.quantity * o.item?.price! | currency}}</td>
                 <td>
-                    <a [routerLink]="['/orders/get/', o.id]">Details</a> |
-                    <a [routerLink]="['/orders/edit/', o.id]">Edit</a>
+                    <a [routerLink]="['/orderline/get/', o.id]">Details</a> |
+                    <a [routerLink]="['/orderline/edit/', o.id]">Edit</a>
                 </td>
             </tr>
         </tbody>
