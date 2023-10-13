@@ -14,7 +14,7 @@ export class OrderlineService {
     private http: HttpClient
   ) { }
 
-    add(ord1: Orderline): Observable<Orderline> {
+    create(ord1: Orderline): Observable<Orderline> {
       return this.http.post(`${this.baseUrl}`, ord1) as Observable<Orderline>
     }
 }

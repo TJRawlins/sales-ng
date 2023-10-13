@@ -1,11 +1,7 @@
 <app-menu></app-menu>
 <div id="table-wrapper">
     <div id="sub-menu">
-        <a id="add-user" [routerLink]="['orderline/add/', ord.id]"><i class="fa-solid fa-cart-plus"></i></a>
-        <div id="search-wrapper">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" placeholder="Search">
-        </div>
+        <a id="add-user" [routerLink]="['/orderline/add/', ord.id]"><i class="fa-solid fa-cart-plus"></i></a>
     </div>
     <!-- Display Order -->
     <table class="table table-striped">
@@ -22,16 +18,17 @@
         </thead>
         <tbody id="order-item">
             <tr>
-                <td>{{ord.id}}</td>
-                <td>{{ord.date}}</td>
-                <td>{{ord.description}}</td>
-                <td>{{ord.total | currency}}</td>
-                <td>{{ord.customer?.name}}</td>
-                <td>{{ord.status}}</td>
+                <td><span>ID: </span> {{ord.id}}</td>
+                <td><span>Date: </span>{{ord.date}}</td>
+                <td><span>Desc: </span>{{ord.description}}</td>
+                <td><span>Total: </span>{{ord.total | currency}}</td>
+                <td><span>Cust: </span>{{ord.customer?.name}}</td>
+                <td><span>Status: </span>{{ord.status}}</td>
                 <td>
-                    <button (click)="ok()" class="btn-circle stat-green">OK</button>
-                    <button (click)="backorder()" class="btn-circle stat-orange">B/O</button>
-                    <button (click)="closed()" class="btn-circle stat-red">C</button>
+                    <span class="btn-span"><button (click)="ok()" class="btn-circle stat-green">OK</button></span>
+                    <span class="btn-span"><button (click)="backorder()" class="btn-circle stat-orange">B/O</button></span>
+                    <span class="btn-span"><button (click)="closed()" class="btn-circle stat-red">CLOSE</button></span>
+                    
                 </td>
             </tr>
         </tbody>
