@@ -50,6 +50,15 @@
     color: rgb(90, 90, 90);
 }
 
+#order-item td div.div-data.status-closed {
+    color: rgb(204, 39, 39);
+}
+#order-item td div.div-data.status-bo {
+    color: rgb(211, 171, 40);
+}
+#order-item td div.div-data.status-ok {
+    color: rgb(36, 187, 36);
+}
 
 
 #order-item td span.btn-span {
@@ -183,7 +192,6 @@ a#add-user:hover {
 }
 
 #a-row {
-    display: flex;
     gap: 0.25rem;
     flex-wrap: wrap;
 }
@@ -216,3 +224,4 @@ a#add-user:hover {
     color: white;
     transform: scale(1.02);
 }
+

@@ -39,6 +39,9 @@ export class OrderlineAddComponent {
     });
   }
 
+  goBack(): void {
+    window.history.back();
+  }
 
   ngOnInit(): void {
     // FOREIGN KEY - Use ActiveRoute to get the url id variable (related to app-routing module), then assign to order id

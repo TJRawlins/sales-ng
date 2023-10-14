@@ -75,6 +75,9 @@ export class OrderLinesComponent {
     });
   }
 
+  goBack(): void {
+    window.history.back();
+  }
 
   toggleHide(i:number) {
     document.querySelectorAll('.confirm')[i].classList.toggle('hide')

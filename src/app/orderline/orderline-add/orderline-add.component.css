@@ -45,3 +45,23 @@ button {
     justify-content: flex-start !important;
     margin-top: 1rem;
 }
+
+#btn-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#btn-container button, a {
+    justify-content: flex-start !important;
+    width: 100%;
+}
+
+#btn-container a {
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+    width: 100%;
+}

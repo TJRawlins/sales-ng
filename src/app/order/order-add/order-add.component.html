@@ -23,6 +23,9 @@
                     <option *ngFor="let x of custs" value="{{x.id}}">{{x.name}}</option>
                 </select>
             </div>
-        <button class="btn btn-primary" (click)="addOrd()">Create</button>
+            <div id="btn-container">
+                <button class="btn btn-primary" (click)="addOrd()">Create</button>
+                <button class="btn btn-primary" (click)="goBack()">Back</button>
+            </div>
     </div>
 </div>

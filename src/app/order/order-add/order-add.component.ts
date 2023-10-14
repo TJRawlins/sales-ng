@@ -32,6 +32,10 @@ export class OrderAddComponent {
     });
   }
 
+  goBack(): void {
+    window.history.back();
+  }
+
   ngOnInit(): void {
     this.custSvc.list().subscribe({
       next: (res) => {
