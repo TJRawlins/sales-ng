@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+<div id="table-wrapper">
+    <div id="sub-menu">
+        <a id="add-user" routerLink="/items/add"><i class="fa-solid fa-plus"></i></a>
+        <div id="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" [(ngModel)]="substr" placeholder="Search">
+        </div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id<i class="fa-solid fa-sort" (click)="sortOrder('id')"></i></th>
+                <th>Name<i class="fa-solid fa-sort" (click)="sortOrder('name')"></i></th>
+                <th>Price<i class="fa-solid fa-sort" (click)="sortOrder('price')"></i></th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of items | searchItem:substr | sort:sortCol:sortAsc">
+            <!-- <tr *ngFor="let i of items"> -->
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.price}}</td>
+                <td><a [routerLink]="['/items/get/', i.id]">Details</a> | 
+                    <a [routerLink]="['/items/edit/', i.id]">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

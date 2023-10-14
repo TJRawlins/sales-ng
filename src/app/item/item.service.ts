@@ -10,7 +10,7 @@ import { AppInitService } from '../app-init.service';
 export class ItemService {
 
   // baseUrl: string = "http://localhost:5555/api/items";
-  get url() {return `${this.init.config.baseurl}/api/customers`};
+  get url() {return `${this.init.config.baseurl}/api/items`};
 
   constructor(
     private http: HttpClient,

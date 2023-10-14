@@ -19,6 +19,7 @@ import { OrderEditComponent } from './order/order-edit/order-edit.component';
 import { OrderLinesComponent } from './order/order-lines/order-lines.component';
 import { OrderlineAddComponent } from './orderline/orderline-add/orderline-add.component';
 import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"/login", pathMatch:"full"},
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path:"orders/lines/:id", component: OrderLinesComponent},
   {path:"orderline/add/:oid", component: OrderlineAddComponent},
   {path:"orderline/edit/:oid", component: OrderlineEditComponent},
+  {path:"items", component: ItemListComponent},
   {path:"about", component: AboutComponent},
   {path:"**", component: E404Component}
 ]

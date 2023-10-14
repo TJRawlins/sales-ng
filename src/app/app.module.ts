@@ -35,6 +35,8 @@ import { OrderlineAddComponent } from './orderline/orderline-add/orderline-add.c
 import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
 import { AppInitService } from './app-init.service';
 import { ItemComponent } from './item/item.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
+import { SearchItemPipe } from './item/search-item.pipe';
 
 export const startupServiceFactory = (appinit: AppInitService) => {
   return () => appinit.getSettings();
@@ -70,7 +72,9 @@ export const startupServiceFactory = (appinit: AppInitService) => {
     OrderlineListComponent,
     OrderlineAddComponent,
     OrderlineEditComponent,
-    ItemComponent
+    ItemComponent,
+    ItemListComponent,
+    SearchItemPipe
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule, DatePipe

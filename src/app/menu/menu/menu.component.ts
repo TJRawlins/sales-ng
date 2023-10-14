@@ -12,6 +12,7 @@ export class MenuComponent {
     new Menu("CUSTOMERS", "/customers"),
     new Menu("EMPLOYEES", "/employees"),
     new Menu("ORDERS", "/orders"),
+    new Menu("ITEMS", "/items"),
     new Menu("ABOUT", "/about"),
   ];
 }
