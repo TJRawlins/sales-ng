@@ -5,6 +5,6 @@ export class Orderline {
     quantity: number = 0;
     price: number = 0;
     orderId: number = 0;
-    ItemId: number = 0;
+    itemId: number = 0;
     item: Item | null = null;
 }

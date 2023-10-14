@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
@@ -33,6 +33,13 @@ import { OrderLinesComponent } from './order/order-lines/order-lines.component';
 import { OrderlineListComponent } from './orderline/orderline-list/orderline-list.component';
 import { OrderlineAddComponent } from './orderline/orderline-add/orderline-add.component';
 import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
+import { AppInitService } from './app-init.service';
+import { ItemComponent } from './item/item.component';
+
+export const startupServiceFactory = (appinit: AppInitService) => {
+  return () => appinit.getSettings();
+}
+
 
 @NgModule({
   declarations: [
@@ -62,12 +69,20 @@ import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edi
     OrderLinesComponent,
     OrderlineListComponent,
     OrderlineAddComponent,
-    OrderlineEditComponent
+    OrderlineEditComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule, DatePipe
   ],
-  providers: [],
+  providers: [
+    AppInitService, {
+      provide: APP_INITIALIZER,
+      useFactory: startupServiceFactory,
+      deps: [AppInitService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

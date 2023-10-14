@@ -16,6 +16,7 @@ export class OrderlineEditComponent {
   ord1: Orderline = new Orderline();
   // default the items property to array to prevent undefined r-squig. Alternatively, add a ! after items (items!:)
   items: Item[] = [];
+  itemId: number = 0;
 
   constructor(
     private sysSvc: SystemService,
@@ -49,13 +50,15 @@ export class OrderlineEditComponent {
       }, 
       error: (err) => console.error(err)
     })
+
     // FOREIGN KEY - Use ActiveRoute to get the url id variable (related to app-routing module), then assign to order id
-    let id = +this.route.snapshot.params["oid"]
     // Get the items list when page loads
+    let id = +this.route.snapshot.params["oid"]
     this.olSvc.get(id).subscribe({
       next: (res) => {
         console.debug(res)
         this.ord1 = res
+        this.itemId = +res.itemId
       }, error: (err) => console.error(err)
     })
   }

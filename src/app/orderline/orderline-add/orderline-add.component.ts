@@ -32,7 +32,7 @@ export class OrderlineAddComponent {
     // ADD ORDERLINE
     this.olSvc.create(this.ord1).subscribe({
       next: (res) => {
-        console.log(res);
+        // console.log(res);
         this.router.navigateByUrl(`/orders/lines/${this.ord1.orderId}`);
       },
       error: (err) => console.error(err)
@@ -43,10 +43,11 @@ export class OrderlineAddComponent {
   ngOnInit(): void {
     // FOREIGN KEY - Use ActiveRoute to get the url id variable (related to app-routing module), then assign to order id
     this.ord1.orderId = +this.route.snapshot.params["oid"]
+    console.log(this.ord1)
     // Get the items list when page loads
     this.itemSvc.list().subscribe({
       next: (res) => {
-        console.debug(res)
+        // console.debug(res)
         this.items = res
       }, error: (err) => console.error(err)
     })
