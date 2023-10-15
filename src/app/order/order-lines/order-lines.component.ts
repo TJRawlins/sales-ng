@@ -23,10 +23,15 @@ export class OrderLinesComponent {
     private route: ActivatedRoute
   ){}
 
+
   ok(): void {
+    let statusEl = document.getElementById('status')
     this.ordSvc.ok(this.ord).subscribe({
       next: (res) => {
-        console.debug("Order status OK!")
+        console.debug("Order status OK!");
+        statusEl!.classList.remove('status-closed')
+        statusEl!.classList.remove('status-bo')
+        statusEl!.classList.add('status-ok')
         this.refresh();
       },
       error: (err) => console.error(err)
@@ -60,6 +65,7 @@ export class OrderLinesComponent {
       next: (res) => {
         console.debug(res);
         this.ord = res;
+        this.statusColor();
       }
     })
   }
@@ -81,6 +87,30 @@ export class OrderLinesComponent {
 
   toggleHide(i:number) {
     document.querySelectorAll('.confirm')[i].classList.toggle('hide')
+  }
+
+  statusColor(): void {
+    let statusEl = document.getElementById('status');
+    if (this.ord.status === "OK") {
+      statusEl!.classList.add('status-ok')
+      statusEl!.classList.remove('status-bo')
+      statusEl!.classList.remove('status-closed')
+    }
+    else if (this.ord.status === "BACKORDER") {
+      statusEl!.classList.remove('status-ok')
+      statusEl!.classList.add('status-bo')
+      statusEl!.classList.remove('status-closed')
+    } 
+    else if (this.ord.status === "CLOSED") {
+      statusEl!.classList.remove('status-ok')
+      statusEl!.classList.remove('status-bo')
+      statusEl!.classList.add('status-closed')
+    } 
+    else {
+      statusEl!.classList.add('status-ok')
+      statusEl!.classList.remove('status-bo')
+      statusEl!.classList.remove('status-closed')
+    }
   }
 
   ngOnInit(): void {

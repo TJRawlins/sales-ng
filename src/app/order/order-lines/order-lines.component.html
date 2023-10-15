@@ -14,7 +14,7 @@
                 <td><div>Description: </div><div class="div-data">{{ord.description}}</div></td>
                 <td><div>Total: </div><div class="div-data">{{ord.total | currency}}</div></td>
                 <td><div>Customer: </div><div class="div-data">{{ord.customer?.name}}</div></td>
-                <td><div>Status: </div><div class="div-data status-ok">{{ord.status}}</div></td>
+                <td><div>Status: </div><div class="div-data" id="status">{{ord.status}}</div></td>
                 <td>
                     <span class="btn-span"><button (click)="ok()" class="btn-circle stat-green">OK</button></span>
                     <span class="btn-span"><button (click)="backorder()" class="btn-circle stat-orange">B/O</button></span>

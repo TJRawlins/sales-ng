@@ -37,6 +37,7 @@ import { AppInitService } from './app-init.service';
 import { ItemComponent } from './item/item.component';
 import { ItemListComponent } from './item/item-list/item-list.component';
 import { SearchItemPipe } from './item/search-item.pipe';
+import { StatusColorDirective } from './order/status-color.directive';
 
 export const startupServiceFactory = (appinit: AppInitService) => {
   return () => appinit.getSettings();
@@ -74,7 +75,8 @@ export const startupServiceFactory = (appinit: AppInitService) => {
     OrderlineEditComponent,
     ItemComponent,
     ItemListComponent,
-    SearchItemPipe
+    SearchItemPipe,
+    StatusColorDirective
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule, DatePipe

@@ -85,7 +85,7 @@
     border-right: 1px solid rgb(175, 175, 175);
 }
 
-.btn-circle:hover {
+.btn-circle:hover, .confirm:hover {
     transform: translateY(-2px);
     box-shadow: rgba(38, 57, 77, 0.664) 0px 10px 10px -5px;
 }
@@ -95,25 +95,15 @@
     box-shadow: none;
 }
 
-/* .stat-green {
-    border-left: 10px solid rgb(36, 187, 36);
-} */
 .stat-green:hover {
     background-color: rgb(36, 187, 36);
 }
-/* .stat-orange {
-    border-left: 10px solid rgb(211, 171, 40);
-} */
 .stat-orange:hover {    
     background-color: rgb(211, 171, 40);
 }
-/* .stat-red {
-    border-left: 10px solid rgb(204, 39, 39);
-} */
 .stat-red:hover {    
     background-color: rgb(204, 39, 39);
 }
-
 
 a {
     text-decoration: none;
@@ -217,11 +207,11 @@ a#add-user:hover {
     background-color: orange;
     border-radius: 15px;
     padding: 0 0.75rem;
-    transition: all 0.5s ease-in-out;
+    transition: 0.25s all ease;
 }
 
 .confirm:hover {
+    display: inline-block;
     color: white;
-    transform: scale(1.02);
 }
 

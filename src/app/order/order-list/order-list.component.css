@@ -85,3 +85,13 @@ a#add-user:hover {
 .fa-sort:hover {
     color: #cacaca;
 }
+
+.status-ok {
+    color: rgb(36, 187, 36);
+}
+.status-bo {    
+    color: rgb(211, 171, 40);
+}
+.status-closed {    
+    color: rgb(204, 39, 39);
+}
