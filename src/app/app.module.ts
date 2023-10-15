@@ -38,6 +38,8 @@ import { ItemComponent } from './item/item.component';
 import { ItemListComponent } from './item/item-list/item-list.component';
 import { SearchItemPipe } from './item/search-item.pipe';
 import { StatusColorDirective } from './order/status-color.directive';
+import { ItemAddComponent } from './item/item-add/item-add.component';
+import { ItemEditComponent } from './item/item-edit/item-edit.component';
 
 export const startupServiceFactory = (appinit: AppInitService) => {
   return () => appinit.getSettings();
@@ -76,7 +78,9 @@ export const startupServiceFactory = (appinit: AppInitService) => {
     ItemComponent,
     ItemListComponent,
     SearchItemPipe,
-    StatusColorDirective
+    StatusColorDirective,
+    ItemAddComponent,
+    ItemEditComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule, DatePipe

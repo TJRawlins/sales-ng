@@ -14,7 +14,7 @@ export class StatusColorDirective {
   ) { 
     setTimeout(() => {
       let td = this.el.nativeElement
-        console.log(td)
+        // console.log(td)
         if (td.innerText === "OK") {
           td.classList.add('status-ok')
         }

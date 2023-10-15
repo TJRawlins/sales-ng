@@ -21,7 +21,7 @@
             <!-- <tr *ngFor="let i of items"> -->
                 <td>{{i.id}}</td>
                 <td>{{i.name}}</td>
-                <td>{{i.price}}</td>
+                <td>{{i.price | currency}}</td>
                 <td><a [routerLink]="['/items/get/', i.id]">Details</a> | 
                     <a [routerLink]="['/items/edit/', i.id]">Edit</a>
                 </td>

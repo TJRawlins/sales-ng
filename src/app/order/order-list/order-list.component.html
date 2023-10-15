@@ -22,7 +22,7 @@
         <tbody>
             <tr *ngFor="let o of ords | searchOrder:substr | sort:sortCol:sortAsc">
                 <td>{{o.id}}</td>
-                <td>{{o.date}}</td>
+                <td>{{o.date | date:'medium'}}</td>
                 <td>{{o.description}}</td>
                 <td>{{o.total | currency}}</td>
                 <td>{{o.customer?.name}}</td>

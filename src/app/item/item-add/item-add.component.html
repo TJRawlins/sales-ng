@@ -1,0 +1,17 @@
+<app-menu></app-menu>
+<div id="create-wrapper">
+    <div id="create-card">
+            <div class="item">
+                <label for="">Name:</label>
+                <input type="text" name="" id="" [(ngModel)]="itm.name">
+            </div>
+            <div class="item">
+                <label for="">Price:</label>
+                <input type="text" name="" id="" [(ngModel)]="itm.price">
+            </div>
+            <div id="btn-container">
+                <button class="btn btn-primary" (click)="addItm()">Create</button>
+                <button class="btn btn-primary" (click)="goBack()">Back</button>
+            </div>
+    </div>
+</div>
