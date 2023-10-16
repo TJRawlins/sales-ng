@@ -26,7 +26,7 @@
                 <td>{{o.description}}</td>
                 <td>{{o.total | currency}}</td>
                 <td>{{o.customer?.name}}</td>
-                <td appStatusColor>{{o.status}}</td>
+                <td appStatusColor class="status">{{o.status}}</td>
                 <td><a [routerLink]="['/orders/get/', o.id]">Details</a> | 
                     <a [routerLink]="['/orders/edit/', o.id]">Edit</a> | 
                     <a [routerLink]="['/orders/lines/', o.id]">Lines</a>

@@ -54,8 +54,7 @@
     margin-right: 0.25rem;
 }
 #order-item td div.div-data {
-    /* color: rgb(90, 90, 90); */
-    color: #8198a5;
+    color: rgb(90, 90, 90);
 }
 
 #order-item td div.div-data.status-closed {

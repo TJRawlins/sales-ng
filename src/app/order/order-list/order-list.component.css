@@ -86,6 +86,12 @@ a#add-user:hover {
     color: #cacaca;
 }
 
+.status {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+    font-weight: bold;
+}
+
 .status-ok {
     color: rgb(36, 187, 36);
 }
